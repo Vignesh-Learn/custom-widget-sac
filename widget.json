@@ -3,7 +3,7 @@
   "vendor": "Evora Group",
   "license": "",
   "id": "com.evora.oevstarget",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "name": "Actual vs Target Rows",
   "newInstancePrefix": "ActualVsTarget",
   "description": "Grouped actual vs target bars with pace-based colors",
@@ -11,18 +11,36 @@
     {
       "kind": "main",
       "tag": "com-evora-actual-vs-target",
-      "url": "https://vignesh-learn.github.io/custom-widget-sac/main.js",
+      "url": "https://vignesh-learn.github.io/custom-widget-sac/main.js?v=3",
+      "integrity": "",
+      "ignoreIntegrity": true
+    },
+    {
+      "kind": "styling",
+      "tag": "com-evora-actual-vs-target-styling",
+      "url": "https://vignesh-learn.github.io/custom-widget-sac/styling.js?v=3",
       "integrity": "",
       "ignoreIntegrity": true
     }
   ],
   "properties": {
-    "title": { "type": "string", "default": "Order Entry — Actual vs Target" },
+    "widgetTitle": { "type": "string", "default": "Order Entry — Actual vs Target" },
     "debug": { "type": "boolean", "default": false },
     "width": { "type": "integer", "default": 600 },
     "height": { "type": "integer", "default": 500 }
   },
-  "methods": {},
+  "methods": {
+    "setTitle": {
+      "description": "Sets the widget title from a script",
+      "parameters": [{ "name": "newTitle", "type": "string", "description": "New title" }],
+      "body": "this.widgetTitle = newTitle;"
+    },
+    "getTitle": {
+      "returnType": "string",
+      "description": "Returns the widget title",
+      "body": "return this.widgetTitle;"
+    }
+  },
   "events": {},
   "dataBindings": {
     "myDataBinding": {
