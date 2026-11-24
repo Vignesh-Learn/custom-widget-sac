@@ -1,0 +1,35 @@
+{
+  "eula": "",
+  "vendor": "Evora Group",
+  "license": "",
+  "id": "com.evora.oevstarget",
+  "version": "1.0.0",
+  "name": "Actual vs Target Rows",
+  "newInstancePrefix": "ActualVsTarget",
+  "description": "Grouped actual vs target bars with pace-based colors",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "com-evora-actual-vs-target",
+      "url": "https://vignesh-learn.github.io/custom-widget-sac/main.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "title": { "type": "string", "default": "Order Entry — Actual vs Target" },
+    "debug": { "type": "boolean", "default": false },
+    "width": { "type": "integer", "default": 600 },
+    "height": { "type": "integer", "default": 500 }
+  },
+  "methods": {},
+  "events": {},
+  "dataBindings": {
+    "myDataBinding": {
+      "feeds": [
+        { "id": "dimensions", "description": "Region first, then Business unit", "type": "dimension" },
+        { "id": "measures", "description": "Actual first, then Target", "type": "mainStructureMember" }
+      ]
+    }
+  }
+}
