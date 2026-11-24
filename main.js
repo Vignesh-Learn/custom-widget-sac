@@ -47,7 +47,7 @@
       super();
       this._shadow = this.attachShadow({ mode: "open" });
       this._shadow.appendChild(tpl.content.cloneNode(true));
-      this._props = { title: "Revenue — Actual vs Target" };
+      this._props = { widgetTitle: "Order Entry — Actual vs Target" };
     }
     onCustomWidgetBeforeUpdate(changed) { this._props = { ...this._props, ...changed }; }
     onCustomWidgetAfterUpdate() { this.render(); }
@@ -61,7 +61,7 @@
     render() {
       try {
         const sh = this._shadow;
-        sh.getElementById("t").textContent = this._props.title || "";
+        sh.getElementById("t").textContent = this._props.widgetTitle || "";
         const day = dayOfYear(), pace = Math.round((day / 365) * 100);
         sh.getElementById("p").innerHTML =
           `PACE day ${day}/365 = <b>${pace}%</b> · <span class="g">≥${pace}% green</span> · <span class="r">&lt;${pace}% red</span>`;
